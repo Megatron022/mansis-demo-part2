@@ -271,7 +271,7 @@ const VideoSection = styled.div`
 const ResponsiveStyles = styled.div`
   @media (max-width: 1024px) {
     ${Hero} {
-      height: 400px;
+      height: 600px;
       padding: 0 30px;
 
       h1 {
@@ -323,7 +323,7 @@ const ResponsiveStyles = styled.div`
 
   @media (max-width: 480px) {
     ${Hero} {
-      height: 300px;
+      height: 500px;
       padding: 0 15px;
 
       h1 {
