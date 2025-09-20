@@ -12,6 +12,7 @@ const PageContainer = styled.div`
   font-family: "Montserrat", sans-serif;
 `;
 
+/* === Hero Section === */
 const HeroSection = styled.section`
   background: url(${bgImage}) no-repeat center center/cover;
   position: relative;
@@ -29,12 +30,28 @@ const HeroSection = styled.section`
     background: rgba(29, 44, 99, 0.6);
     z-index: 1;
   }
+
+  @media (max-width: 1024px) {
+    min-height: 70vh;
+    padding: 2.5rem;
+  }
+
+  @media (max-width: 768px) {
+    min-height: 60vh;
+    padding: 2rem 1rem;
+    text-align: center;
+    justify-content: center;
+  }
 `;
 
 const Content = styled.div`
   position: relative;
   z-index: 2;
   max-width: 800px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 const Title = styled.h1`
@@ -42,78 +59,133 @@ const Title = styled.h1`
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 1.25rem;
-  font-style:"montserrat", sans-serif;
+
+  @media (max-width: 1280px) {
+    font-size: 2.8rem;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 2.3rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.9rem;
+  }
 `;
 
 const Paragraph = styled.p`
   font-size: 1.125rem;
   line-height: 1.6;
-  font-style:"montserrat", sans-serif;
   text-align: justify;
 
-  .highlight {
-    color: #ff4d6d;
-    font-weight: 600;
+  @media (max-width: 1024px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+    text-align: center;
   }
 `;
 
 /* === Services Section === */
 const Section = styled.section`
   background: url(${supportBg}) no-repeat center center/cover;
-  padding: 8.75rem 1rem;
+  padding: 8rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 3.125rem;
+  gap: 3rem;
   align-items: center;
+
+  @media (max-width: 1024px) {
+    padding: 6rem 1rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 4rem 1rem;
+    gap: 2rem;
+  }
 `;
 
 const Card = styled.div`
   background: url(${blueBg}) no-repeat center center/cover;
-  background-size: 100% 100%; 
+  background-size: 100% 100%;
   color: #fff;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 2rem;
   padding: 3rem;
   width: 100%;
   max-width: 1200px;
   border-radius: 1rem;
-  height:700px;
+
+  @media (max-width: 1024px) {
+    padding: 2.5rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
 `;
 
 const TextTop = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 4rem;
+  gap: 3rem;
   align-items: flex-start;
+  flex-wrap: wrap;
 
   h2 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 800;
     flex: 0.4;
     text-align: center;
-    margin-top: 4rem;
+    margin-top: 2rem;
+
+    @media (max-width: 1280px) {
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 2.2rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+      margin-top: 1rem;
+      margin-right: 85px;
+    }
   }
 
   .right {
     flex: 1;
-    
+
     p {
-      max-width: 32ch;
+      max-width: 40ch;
       font-size: 1rem;
       line-height: 1.6;
       margin-bottom: 1rem;
-    }
 
-    ul {
-      padding-left: 1.25rem;
+      @media (max-width: 1024px) {
+        font-size: 0.95rem;
+      }
 
-      li {
-        margin-bottom: 0.5rem;
-        font-size: 1rem;
-        line-height: 1.5;
+      @media (max-width: 768px) {
+        font-size: 0.9rem;
+        max-width: 60%;
+        text-align: center;
       }
     }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    max-width: 79%;
+    margin-left: 22px;
   }
 `;
 
@@ -127,12 +199,20 @@ const TextBottom = styled.div`
   .left {
     flex: 1;
     min-width: 280px;
-    margin-left: 3rem;
 
     h3 {
       font-size: 2rem;
       margin-bottom: 0.75rem;
       font-weight: 800;
+
+      @media (max-width: 1024px) {
+        font-size: 1.6rem;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 1.4rem;
+        text-align: center;
+      }
     }
 
     ul {
@@ -144,6 +224,15 @@ const TextBottom = styled.div`
         margin-bottom: 0.5rem;
         font-size: 1rem;
         line-height: 1.5;
+
+        @media (max-width: 1024px) {
+          font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 0.9rem;
+          text-align: left;
+        }
       }
     }
   }
@@ -152,18 +241,30 @@ const TextBottom = styled.div`
     flex: 1;
     min-width: 300px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 
     img {
       width: 100%;
       max-width: 400px;
-      height: 305px; 
       border-radius: 0.75rem;
       border: 3px solid white;
-      object-fit: cover; 
-      
+      object-fit: cover;
+
+      @media (max-width: 1024px) {
+        max-width: 350px;
+        max-height: 230px;
+      }
+
+      @media (max-width: 768px) {
+        max-width: 100%;
+      }
     }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 2rem;
   }
 `;
 
@@ -196,8 +297,8 @@ const SupportServices = () => {
             <div className="right">
               <p>
                 The team at Mansys handles your incidents, service requests, and
-                general IT inquiries, ensuring that technical issues are resolved
-                efficiently:
+                general IT inquiries, ensuring that technical issues are
+                resolved efficiently:
               </p>
               <ul>
                 <li>Incident Management</li>
@@ -248,7 +349,6 @@ const SupportServices = () => {
                 <li>Password Management and Reset Policies</li>
               </ul>
             </div>
-            
           </TextTop>
 
           <TextBottom>
@@ -265,7 +365,6 @@ const SupportServices = () => {
                 <li>
                   Enforce strong password policies and regular password updates.
                 </li>
-                
                 <li>
                   Implement Single Sign-On (SSO) and MFA for enhanced security.
                 </li>
