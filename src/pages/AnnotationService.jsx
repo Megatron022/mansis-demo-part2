@@ -124,7 +124,7 @@ const Container = styled.div`
 
 const Hero = styled.div`
   width: 100%;
-  height: 500px;
+  height: 80vh;
   background-image: url(${annotationbg});
   background-size: cover;
   background-position: center;
