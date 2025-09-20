@@ -39,9 +39,9 @@ function AppWrapper() {
 
 function App() {
   return (
-    <Router>
+    
       <AppWrapper />
-    </Router>
+    
   );
 }
 

@@ -6,7 +6,7 @@ import logoImage from "../assets/logo.png";
 
 // Navbar Container
 const NavbarContainer = styled.nav`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -222,13 +222,13 @@ const Header = () => {
           <DropdownMenu open={openDropdown}>
             <DropdownItem
               to="/annotation-service"
-              onClick={() => setOpenDropdown(false)}
+              onClick={() => setOpenDropdown(false)} 
             >
               Annotation Service
             </DropdownItem>
             <DropdownItem
               to="/support-service"
-              onClick={() => setOpenDropdown(false)}
+              onClick={() => setOpenDropdown(false)} 
             >
               Support Service
             </DropdownItem>
@@ -266,8 +266,7 @@ const Header = () => {
         <MobileMenuItem to="/about" onClick={() => setMobileMenuOpen(false)}>
           About
         </MobileMenuItem>
-        <MobileMenuItem
-          to="/contact"
+        <MobileMenuItem to="/contact"
           onClick={() => {
             navigate("/contact");
             setMobileMenuOpen(false);
