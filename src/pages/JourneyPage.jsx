@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { useInView } from "framer-motion";
+import logo2 from "../assets/logo2.png";
 
 const useCountUp = (end, isInView, duration = 2000) => {
   const [count, setCount] = useState(0);
@@ -66,6 +67,8 @@ const JourneyPage = () => {
           <StatNumber>{projects}+</StatNumber>
           <StatText>Projects Completed</StatText>
         </StatCard>
+        <LogoImg src={logo2} alt="Company Logo" />
+
       </StatsSection>
     </Container>
   );
@@ -150,8 +153,16 @@ const Description = styled.p`
     font-size: 14px;
   }
 `;
+const LogoImg = styled.img`
+  position: absolute;
+  bottom: 0px;  
+  right: 0px;   
+  width: 120px;
+  height: auto;
+`;
 
 const StatsSection = styled.div`
+position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;

@@ -5,6 +5,7 @@ import serviceImg from "../assets/supportImg2.png";
 import accountImg from "../assets/supportImg3.png";
 import supportBg from "../assets/bgimg.png";
 import blueBg from "../assets/supportbluebg.png";
+import logo2 from "../assets/logo2.png";
 
 /* === Styled Components === */
 const PageContainer = styled.div`
@@ -189,6 +190,17 @@ const TextTop = styled.div`
   }
 `;
 
+const LogoImg = styled.img`
+  margin-top: 17rem;
+  width: 100px;   
+  height: auto;
+  display: block;
+  position: absolute;
+  right: 170px;
+  
+`;
+
+
 const TextBottom = styled.div`
   display: flex;
   justify-content: space-between;
@@ -249,6 +261,7 @@ const TextBottom = styled.div`
       max-width: 400px;
       border-radius: 0.75rem;
       border: 3px solid white;
+      height: 220px;
       object-fit: cover;
 
       @media (max-width: 1024px) {
@@ -285,7 +298,9 @@ const SupportServices = () => {
             proactive account management, and personalized assistance to enhance
             operational efficiency and customer satisfaction.
           </Paragraph>
+          
         </Content>
+        
       </HeroSection>
 
       {/* Services Section */}
@@ -349,6 +364,7 @@ const SupportServices = () => {
                 <li>Password Management and Reset Policies</li>
               </ul>
             </div>
+            
           </TextTop>
 
           <TextBottom>
@@ -372,7 +388,9 @@ const SupportServices = () => {
             </div>
             <div className="right">
               <img src={accountImg} alt="Mansys Account Management Team" />
+              
             </div>
+            <LogoImg src={logo2} alt="Company Logo" />
           </TextBottom>
         </Card>
       </Section>
