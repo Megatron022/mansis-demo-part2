@@ -42,11 +42,14 @@ const Title = styled.h1`
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 1.25rem;
+  font-style:"montserrat", sans-serif;
 `;
 
 const Paragraph = styled.p`
   font-size: 1.125rem;
   line-height: 1.6;
+  font-style:"montserrat", sans-serif;
+  text-align: justify;
 
   .highlight {
     color: #ff4d6d;

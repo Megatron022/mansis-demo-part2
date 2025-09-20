@@ -222,13 +222,13 @@ const Header = () => {
           <DropdownMenu open={openDropdown}>
             <DropdownItem
               to="/annotation-service"
-              onClick={() => setOpenDropdown(false)} 
+              onClick={() => setOpenDropdown(false)}
             >
               Annotation Service
             </DropdownItem>
             <DropdownItem
               to="/support-service"
-              onClick={() => setOpenDropdown(false)} 
+              onClick={() => setOpenDropdown(false)}
             >
               Support Service
             </DropdownItem>
@@ -267,6 +267,7 @@ const Header = () => {
           About
         </MobileMenuItem>
         <MobileMenuItem
+          to="/contact"
           onClick={() => {
             navigate("/contact");
             setMobileMenuOpen(false);
