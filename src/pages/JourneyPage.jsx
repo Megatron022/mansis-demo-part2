@@ -222,6 +222,7 @@ const StatText = styled.p`
 const StatNumber = styled.h3`
   font-size: 2.5rem;
   font-weight: bold;
+  font-style:"poppins", sans-serif;
 
   @media (max-width: 1024px) {
     font-size: 2.2rem;
