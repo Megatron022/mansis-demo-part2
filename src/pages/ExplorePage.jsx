@@ -1,14 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { motion, useAnimation, useInView } from "framer-motion";
-
 import dataMiningImg from "../assets/datamining.png";
 import serviceDeskImg from "../assets/servicedesk.png";
 import dataAnnotationImg from "../assets/dataannotation.png";
 
 const ExplorePage = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { threshold: 1, once: true });
+  const inView = useInView(ref, { threshold: 0.2, triggerOnce: true });
   const controls = useAnimation();
 
   const cards = [
@@ -31,7 +30,6 @@ const ExplorePage = () => {
       image: dataAnnotationImg,
     },
   ];
-
   useEffect(() => {
     if (inView) {
       controls.start("visible");
@@ -45,13 +43,12 @@ const ExplorePage = () => {
     },
     visible: (i) => ({
       opacity: 1,
-      scale: [0.8, 1], // zoom in effect
+      scale: [0.8, 1],
       transition: {
-        delay: i * 0.5, // stagger cards
-        duration: 2, // zoom animation speed
-        repeat: Infinity, // loop forever
-        repeatDelay: 2, // wait 3s before next cycle
-        ease: "easeInOut", // smooth zoom
+        delay: i * 0.5,
+        duration: 2,
+        repeatDelay: 2,
+        ease: "easeInOut",
       },
     }),
   };

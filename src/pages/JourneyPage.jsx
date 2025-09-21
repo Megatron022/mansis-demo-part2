@@ -68,7 +68,6 @@ const JourneyPage = () => {
           <StatText>Projects Completed</StatText>
         </StatCard>
         <LogoImg src={logo2} alt="Company Logo" />
-
       </StatsSection>
     </Container>
   );
@@ -155,14 +154,14 @@ const Description = styled.p`
 `;
 const LogoImg = styled.img`
   position: absolute;
-  bottom: 0px;  
-  right: 0px;   
+  bottom: 0px;
+  right: 0px;
   width: 120px;
   height: auto;
 `;
 
 const StatsSection = styled.div`
-position: relative;
+  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -200,7 +199,7 @@ const StatCard = styled.div`
 const StatText = styled.p`
   margin: 0;
   color: #fff;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -220,9 +219,10 @@ const StatText = styled.p`
 `;
 
 const StatNumber = styled.h3`
+  font-family: "poppins", sans-serif;
   font-size: 2.5rem;
   font-weight: bold;
-  font-style:"poppins", sans-serif;
+  
 
   @media (max-width: 1024px) {
     font-size: 2.2rem;
