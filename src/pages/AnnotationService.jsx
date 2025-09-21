@@ -163,9 +163,9 @@ const HeroContent = styled.div`
   max-width: 700px;
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 3.25rem;
+    font-weight: 800;
     margin-bottom: 15px;
-    font-weight: bold;
     font-family: "Montserrat", sans-serif;
   }
 
