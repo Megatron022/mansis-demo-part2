@@ -9,8 +9,9 @@ import logo2 from "../assets/logo2.png";
 
 /* === Styled Components === */
 const PageContainer = styled.div`
-  margin-top: 90px;
   font-family: "Montserrat", sans-serif;
+ 
+  
 `;
 
 /* === Hero Section === */
@@ -90,8 +91,11 @@ const Paragraph = styled.p`
 `;
 
 /* === Services Section === */
-const Section = styled.section`
-  background: url(${supportBg}) no-repeat center center/cover;
+const Section = styled.section`background: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url(${supportBg}) no-repeat center center/cover;
   padding: 8rem 1rem;
   display: flex;
   flex-direction: column;
@@ -192,14 +196,12 @@ const TextTop = styled.div`
 
 const LogoImg = styled.img`
   margin-top: 17rem;
-  width: 100px;   
+  width: 100px;
   height: auto;
   display: block;
   position: absolute;
   right: 170px;
-  
 `;
-
 
 const TextBottom = styled.div`
   display: flex;
@@ -298,9 +300,7 @@ const SupportServices = () => {
             proactive account management, and personalized assistance to enhance
             operational efficiency and customer satisfaction.
           </Paragraph>
-          
         </Content>
-        
       </HeroSection>
 
       {/* Services Section */}
@@ -364,7 +364,6 @@ const SupportServices = () => {
                 <li>Password Management and Reset Policies</li>
               </ul>
             </div>
-            
           </TextTop>
 
           <TextBottom>
@@ -388,7 +387,6 @@ const SupportServices = () => {
             </div>
             <div className="right">
               <img src={accountImg} alt="Mansys Account Management Team" />
-              
             </div>
             <LogoImg src={logo2} alt="Company Logo" />
           </TextBottom>

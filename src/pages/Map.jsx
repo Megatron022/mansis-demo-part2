@@ -77,6 +77,5 @@ const MapIframe = styled.iframe`
   border: 0;
   border-radius: 4px;
   filter: brightness(1);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 `;
 export default Map;

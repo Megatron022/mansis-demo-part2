@@ -11,6 +11,7 @@ body,
   width: 100%;
   min-height: auto;
   overflow-x: hidden;
+  
 }
 
 #root::-webkit-scrollbar {
@@ -18,7 +19,7 @@ body,
 }
 
 main.page-background {
-  min-height: 100vh; /* full viewport height */
+  min-height: 100vh; 
   background: linear-gradient(
       rgba(255, 255, 255, 0.7),
       rgba(255, 255, 255, 0.7)
@@ -26,5 +27,5 @@ main.page-background {
     url("./assets/bgimg.png");
   background-size: cover;
   background-position: center;
-  padding-top: 80px; /* push below header if header is fixed */
+  padding-top: 80px; 
 }

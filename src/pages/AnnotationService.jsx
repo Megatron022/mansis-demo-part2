@@ -8,6 +8,7 @@ import annotation4 from "../assets/annotation4.png";
 import annotation5 from "../assets/annotation5.png";
 import annotation6 from "../assets/annotation6.png";
 import annotationvid from "../assets/annotationvid.mp4";
+import bgimg from "../assets/bgimg.png";
 
 const cards = [
   { title: "Semantic Segmentation", img: annotation1 },
@@ -39,76 +40,77 @@ const AnnotationService = () => {
   };
 
   return (
-     <ResponsiveStyles>
-    <Container>
-      {/* Hero Section */}
-      <Hero>
-        <HeroContent>
-          <h1>ANNOTATION SERVICES</h1>
-          <p>
-            At AI Solutions, we specialize in delivering high-quality data
-            annotation services to power AI and ML applications. Our services
-            include image annotation, video annotation, text annotation, and
-            more. With expertise across industries, we provide scalable and
-            customizable annotation solutions tailored to your project’s needs.
-          </p>
-        </HeroContent>
-      </Hero>
+    <ResponsiveStyles>
+      <Container>
+        {/* Hero Section */}
+        <Hero>
+          <HeroContent>
+            <h1>ANNOTATION SERVICES</h1>
+            <p>
+              At AI Solutions, we specialize in delivering high-quality data
+              annotation services to power AI and ML applications. Our services
+              include image annotation, video annotation, text annotation, and
+              more. With expertise across industries, we provide scalable and
+              customizable annotation solutions tailored to your project’s
+              needs.
+            </p>
+          </HeroContent>
+        </Hero>
 
-      {/* Coverflow Carousel */}
-      <CarouselWrapper>
-        <NavButton onClick={handlePrev}>&lt;</NavButton>
-        <CarouselInner>
-          {cards.map((card, index) => {
-            let offset = index - activeIndex;
-            if (offset < 0) offset += cards.length;
+        {/* Coverflow Carousel */}
+        <CarouselWrapper>
+          <NavButton onClick={handlePrev}>&lt;</NavButton>
+          <CarouselInner>
+            {cards.map((card, index) => {
+              let offset = index - activeIndex;
+              if (offset < 0) offset += cards.length;
 
-            // positions with active card at x=0
-            const positions = {
-              0: { x: -470, rotate: 50, scale: 0.6, z: 1, opacity: 0.0 },
-              1: { x: -390, rotate: 30, scale: 0.75, z: 2, opacity: 0.7 },
-              2: { x: -210, rotate: 15, scale: 0.9, z: 3, opacity: 0.85 },
-              3: { x: 0, rotate: 0, scale: 1.2, z: 4, opacity: 1 }, // center
-              4: { x: 210, rotate: -15, scale: 0.9, z: 3, opacity: 0.85 },
-              5: { x: 370, rotate: -30, scale: 0.75, z: 2, opacity: 0.7 },
-            };
+              // positions with active card at x=0
+              const positions = {
+                0: { x: -470, rotate: 50, scale: 0.6, z: 1, opacity: 0.0 },
+                1: { x: -390, rotate: 30, scale: 0.75, z: 2, opacity: 0.7 },
+                2: { x: -210, rotate: 15, scale: 0.9, z: 3, opacity: 0.85 },
+                3: { x: 0, rotate: 0, scale: 1.2, z: 4, opacity: 1 }, // center
+                4: { x: 210, rotate: -15, scale: 0.9, z: 3, opacity: 0.85 },
+                5: { x: 370, rotate: -30, scale: 0.75, z: 2, opacity: 0.7 },
+              };
 
-            // calculate circular offset to center clicked card
-            const posIndex = offset <= 3 ? offset : offset - cards.length;
-            const pos = positions[posIndex + 3] || {
-              x: 420,
-              rotate: -50,
-              scale: 0.7,
-              z: 1,
-              opacity: 0,
-            };
+              // calculate circular offset to center clicked card
+              const posIndex = offset <= 3 ? offset : offset - cards.length;
+              const pos = positions[posIndex + 3] || {
+                x: 420,
+                rotate: -50,
+                scale: 0.7,
+                z: 1,
+                opacity: 0,
+              };
 
-            return (
-              <CarouselCard
-                key={index}
-                style={{
-                  transform: `translateX(${pos.x}px) scale(${pos.scale}) rotateY(${pos.rotate}deg)`,
-                  zIndex: pos.z,
-                  opacity: pos.opacity,
-                }}
-                onClick={() => setActiveIndex(index)} // clicked card becomes center
-              >
-                <img src={card.img} alt={card.title} />
-                <Caption>{card.title}</Caption>
-              </CarouselCard>
-            );
-          })}
-        </CarouselInner>
-        <NavButton onClick={handleNext}>&gt;</NavButton>
-      </CarouselWrapper>
+              return (
+                <CarouselCard
+                  key={index}
+                  style={{
+                    transform: `translateX(${pos.x}px) scale(${pos.scale}) rotateY(${pos.rotate}deg)`,
+                    zIndex: pos.z,
+                    opacity: pos.opacity,
+                  }}
+                  onClick={() => setActiveIndex(index)} // clicked card becomes center
+                >
+                  <img src={card.img} alt={card.title} />
+                  <Caption>{card.title}</Caption>
+                </CarouselCard>
+              );
+            })}
+          </CarouselInner>
+          <NavButton onClick={handleNext}>&gt;</NavButton>
+        </CarouselWrapper>
 
-      {/* Video Section */}
-      <VideoSection>
-        <h2>Video Annotation</h2>
-        <video src={annotationvid} controls autoPlay loop muted />
-      </VideoSection>
-    </Container>
-   </ResponsiveStyles>
+        {/* Video Section */}
+        <VideoSection>
+          <h2>Video Annotation</h2>
+          <video src={annotationvid} controls autoPlay loop muted />
+        </VideoSection>
+      </Container>
+    </ResponsiveStyles>
   );
 };
 
@@ -120,6 +122,13 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  min-height: 100vh;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url(${bgimg}) no-repeat center center/cover;
 `;
 
 const Hero = styled.div`
@@ -255,8 +264,8 @@ const VideoSection = styled.div`
     margin-bottom: 20px;
     font-size: 2.8rem;
     font-weight: bold;
-    color: #1D2C63;
-    font-family:"montserrat", sans-serif;
+    color: #1d2c63;
+    font-family: "montserrat", sans-serif;
   }
 
   video {

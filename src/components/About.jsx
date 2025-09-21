@@ -21,6 +21,11 @@ import img12 from "../assets/images/12.webp";
 const PageContainer = styled.div`
   margin-top: 60px;
   font-family: "Montserrat", sans-serif;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url(${bgImage}) no-repeat center center/cover;
 `;
 
 const HeroSection = styled.section`
@@ -57,8 +62,7 @@ const Content = styled.div`
     content: "";
     position: absolute;
     inset: 0;
-    background: url(${bgImage}) no-repeat center center/cover;
-    opacity: 0.2;
+   
     z-index: -1;
   }
 `;

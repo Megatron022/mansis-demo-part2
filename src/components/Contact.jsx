@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import contactbg from "../assets/contactbg.png";
 import Map from "../pages/Map";
+import bgimg from "../assets/bgimg.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -138,6 +139,12 @@ export default Contact;
 const Container = styled.div`
   width: 100%;
   margin-top: 70px;
+  min-height: 100vh; 
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url(${bgimg}) no-repeat center center/cover;
 `;
 
 const Header = styled.div`
